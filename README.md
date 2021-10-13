@@ -3,7 +3,7 @@
 Learning Go and making web scrapper  
 Lecture: [쉽고 빠른 Go 시작하기](https://nomadcoders.co/go-for-beginners)  
   
-## Main Package and 
+## Main Package and Imports
   
 package main: Go의 기본 package  
 fmt: formatting을 관리하는 module (module을 사용하려면 import)
@@ -77,11 +77,55 @@ import (
 	"fmt"
 )
 
-func repeatMe(words ...string) {
+func repeatMe (words ...string) {
 	fmt.Println(words)
 }
 
 func main() {
 	repeatMe("1", "2", "3", "4", "5") // output: [1, 2, 3, 4, 5]
+}
+```  
+  
+"naked" return: return할 값을 variable처럼 사용 가능하게 하는 것  
+```
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func lenAndUpper(name string) (length int, uppercase string) {
+	length = len(name)
+	uppercase = strings.ToUpper(name)
+	return
+}
+
+func main() {
+	totalLength, upperName := lenAndUpper("bonghak")
+	fmt.Println(totalLength, upperName)
+}
+
+```  
+  
+defer: function이 끝난 후 수행하는 line  
+```
+package main
+
+import (
+	"fmt"
+	"strings"
+)
+
+func lenAndUpper(name string) (length int, uppercase string) {
+	defer fmt.Println("I'm done")	// 함수가 끝나고 "I'm done" 출력
+	length = len(name)
+	uppercase = strings.ToUpper(name)
+	return
+}
+
+func main() {
+	totalLength, upperName := lenAndUpper("bonghak")
+	fmt.Println(totalLength, upperName)
 }
 ```  
