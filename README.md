@@ -207,3 +207,74 @@ func canIDrink(age int) bool {
 	return true
 }
 ```  
+  
+## Switch  
+  
+일반적인 switch 사용법  
+```
+func canIDrink(age int) bool {
+	switch age {
+	case 10:
+		return false
+	case 18:
+		return true
+	}
+	return false
+}
+```  
+  
+variable expression을 적용한 switch  
+```
+func canIDrink(age int) bool {
+	switch koreanAge := age + 2; koreanAge {
+	case 10:
+		return false
+	case 18:
+		return true
+	}
+	return false
+}
+```  
+  
+조건을 주면서 사용하는 것도 가능하다.  
+```
+func canIDrink(age int) bool {
+	switch {
+	case age < 18:
+		return false
+	case age == 18:
+		return true
+	case age > 50:
+		return false
+	}
+	return false
+}
+```  
+  
+## Pointers  
+  
+&(variable name) : 메모리 주소를 보는 법  
+```
+package main
+
+import "fmt"
+
+func main() {
+	a := 2
+	b := 5
+	fmt.Println(&a, &b)
+}
+```  
+  
+`*` : 메모리 주소에 저장되어 있는 데이터를 보는 법  
+```
+package main
+
+import "fmt"
+
+func main() {
+	a := 2
+	b := &a
+	fmt.Println(*b)
+}
+```  
