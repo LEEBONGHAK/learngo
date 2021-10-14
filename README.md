@@ -285,7 +285,7 @@ array를 만드는 방법 : `(array name) := [(array size)](array type)){(elemen
 example : `names := [5]string{"a", "b", "c", "d", "e"}`  
   
 slice : 기본적으로 array이지만 size 지정 없이 사용하는 것 (size가 자동으로 변화)  
-example : `	numbers := []int{1, 2, 3, 4, 5}`  
+example : `numbers := []int{1, 2, 3, 4, 5}`  
   
 append : array에 element를 추가하는 함수 `append((array name), (want to add element))`  
 append는 array를 수정하는 것이 아니라 업데이트하여 return하는 것이기 때문에 아래와 같이 사용해야 한다.  
@@ -293,3 +293,24 @@ append는 array를 수정하는 것이 아니라 업데이트하여 return하는
   
 ## Maps  
   
+map : Python이나 JavaScript의 object 같은 것 `(map name) := map[(key type)](value type){key: value}`  
+example : `test := map[string]string{"name": "bonghak", "age": "12"}`  
+  
+range를 이용해서 반복문에서도 이용 가능  
+```
+package main
+
+import "fmt"
+
+func main() {
+	test := map[string]string{"name": "bonghak", "age": "12"}
+	fmt.Println(test)
+	for key, value := range test {
+		fmt.Println(key, value)
+	}
+}
+```  
+  
+## Structs  
+  
+	
