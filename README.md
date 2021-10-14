@@ -184,3 +184,26 @@ func main() {
 }
 ```  
   
+## If  
+  
+기본적인 If 사용법  
+```
+func canIDrink(age int) bool {
+	if age < 18 {
+		return false
+	} else {
+		return true
+	}
+}
+```  
+  
+variable expression : if문에서 variable을 생성하는 방법  
+variable expression은 if문에서만 사용 가능하고, 이 variable은 if문에서만 사용될 것이란 것을 읽는 사람이 쉽게 알 수 있음  
+```
+func canIDrink(age int) bool {
+	if koreanAge := age + 2; koreanAge < 18 {
+		return false
+	}
+	return true
+}
+```  
