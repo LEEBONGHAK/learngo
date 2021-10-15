@@ -1,6 +1,6 @@
 # Learn Go  
   
-Learning Go and making Bank Account
+Learning Go and making simple Bank Account
 Lecture: [쉽고 빠른 Go 시작하기](https://nomadcoders.co/go-for-beginners)  
   
 ## Main Package and Imports
